@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: nodeapp-deployment
   labels:
-    app: nodeapp
+    app: nodejs-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodeapp
+      app: nodejs-app
   template:
     metadata:
       labels:
-        app: nodeapp 
+        app: nodejs-app
     spec:
       containers:
       - name: nodeserver
-        image: thetips4you/nodeapp:latest
+        image: jayanshp/nodejs-app:latest
         ports:
         - containerPort: 3000
